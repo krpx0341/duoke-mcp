@@ -154,9 +154,14 @@ Do not attach cookies, profile files, customer conversations, or credentials.
 ```bash
 python -m py_compile server.py
 bash -n login.sh duoke-mcp
-python scripts/check_tools.py
 grok mcp doctor duoke --json
 ```
+
+After setup and login:
+
+1. `grok mcp doctor duoke --json` → handshake OK + 6 tools.
+2. In Grok: "Use Duoke MCP. Call status and list_inbox."
+3. Confirm `status.logged_in` is true and inbox returns rows.
 
 Protocol discovery does not prove live Duoke behavior. Complete verification requires authenticated `status`, one real read call, and an approved low-risk reply test.
 
